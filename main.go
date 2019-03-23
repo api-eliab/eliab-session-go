@@ -14,7 +14,7 @@ func main() {
 
 	middlewares := apigolang.MiddlewaresChain(apigolang.BasicAuth)
 
-	router.HandleFunc("/v1.0/session/login", middlewares(login)).Methods("POST")
+	router.HandleFunc("/v1.0/session", middlewares(login)).Methods("POST")
 
 	log.Println("Starting server on port ", config.General.ServerAddress)
 	if startServerError := http.ListenAndServe(config.General.ServerAddress, router); startServerError != nil {
