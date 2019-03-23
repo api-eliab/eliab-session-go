@@ -1,0 +1,8 @@
+github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/gorilla/mux v1.7.0 h1:tOSd0UKHQd6urX6ApfOn4XdBMY6Sh1MfxV3kmaazO+U=
+github.com/gorilla/mux v1.7.0/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/josuegiron/api-golang v0.0.0-20190321105449-655265df46a5 h1:wXc0As6gt/fCOdJeaYLO38qrMuQBDKSwOGw5JJsQdVM=
+github.com/josuegiron/api-golang v0.0.0-20190321105449-655265df46a5/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
+github.com/josuegiron/api-golang v0.0.0-20190323093000-168f17410667 h1:PF09A49AcyMKf37j5fUOhA5Rl10DR9sWFb78USEPFYA=
+github.com/josuegiron/api-golang v0.0.0-20190323093000-168f17410667/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
