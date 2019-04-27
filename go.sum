@@ -6,3 +6,9 @@ github.com/josuegiron/api-golang v0.0.0-20190321105449-655265df46a5 h1:wXc0As6gt
 github.com/josuegiron/api-golang v0.0.0-20190321105449-655265df46a5/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
 github.com/josuegiron/api-golang v0.0.0-20190323093000-168f17410667 h1:PF09A49AcyMKf37j5fUOhA5Rl10DR9sWFb78USEPFYA=
 github.com/josuegiron/api-golang v0.0.0-20190323093000-168f17410667/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
+github.com/josuegiron/api-golang v0.0.0-20190323105842-deea915e4372 h1:GbfuGoKjzEAxyogNr9elfzxbErAi77x24Efy0u3i9mA=
+github.com/josuegiron/api-golang v0.0.0-20190323105842-deea915e4372/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
+github.com/josuegiron/api-golang v0.0.0-20190323110534-f316d36e8e27 h1:F9DvrNV8TlYkqjeeUnNRKKma0RWt4ZgvlYmCM7oxRb4=
+github.com/josuegiron/api-golang v0.0.0-20190323110534-f316d36e8e27/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=
+github.com/josuegiron/api-golang v0.0.0-20190406155305-c3231aca76a0 h1:g2qZLqfqjtdQh9hIom6bMsZXlDyGO9VpZwo0cB3//mg=
+github.com/josuegiron/api-golang v0.0.0-20190406155305-c3231aca76a0/go.mod h1:dHIfNAs9naruLD6AAV16hyEgVPyLt50nTW0/buDvrcM=

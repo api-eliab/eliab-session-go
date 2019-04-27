@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	apigolang "github.com/josuegiron/api-golang"
@@ -9,14 +10,25 @@ import (
 
 func login(w http.ResponseWriter, r *http.Request) {
 
+	loginRequest := LoginRequest{}
+
 	request := apigolang.Request{
 		HTTPReq:    r,
-		JSONStruct: LoginRequest{},
+		JSONStruct: &loginRequest,
 	}
 
 	response := request.UnmarshalBody()
 	if response != nil {
 		apigolang.SendResponse(response, w)
+		return
+	}
+
+	log.Println(loginRequest.Credentials.User)
+
+	response = loginRequest.ValidationFields()
+	if response != nil {
+		apigolang.SendResponse(response, w)
+		return
 	}
 
 	muckData := []byte(`
@@ -55,4 +67,5 @@ func login(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("SessionId", "MySession")
 
 	apigolang.SuccesContentResponse("Inicio de sesión", "¡Esta es información de prueba!", muckStruct, w)
+	return
 }

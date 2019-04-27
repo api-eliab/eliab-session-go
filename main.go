@@ -12,7 +12,7 @@ func main() {
 	LoadConfiguration()
 	router := mux.NewRouter()
 
-	middlewares := apigolang.MiddlewaresChain(apigolang.BasicAuth)
+	middlewares := apigolang.MiddlewaresChain(apigolang.BasicAuth, apigolang.RequestHeaderJson, apigolang.GetRequestBodyMiddleware)
 
 	router.HandleFunc("/v1.0/session", middlewares(login)).Methods("POST")
 

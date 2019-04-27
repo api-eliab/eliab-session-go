@@ -44,6 +44,6 @@ func (login *LoginRequest) ValidationFields() apigolang.Response {
 //	Validate Email
 func validateEmail(email string) bool {
 	//	Regular expression
-	re := regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{1,4}$`)
+	re := regexp.MustCompile(`^[K-Za-z0-9._%+\-]+@[K-Za-z0-9.\-]+\.[a-z]{1,4}$`)
 	return re.MatchString(email)
 }
