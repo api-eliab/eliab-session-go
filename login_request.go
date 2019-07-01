@@ -3,7 +3,7 @@ package main
 import (
 	"regexp"
 
-	apigolang "github.com/josuegiron/api-golang"
+	apigo "github.com/josuegiron/api-golang"
 )
 
 // LoginRequest is struct json request
@@ -15,24 +15,24 @@ type LoginRequest struct {
 }
 
 // ValidationFields validate fields
-func (login *LoginRequest) ValidationFields() apigolang.Response {
+func (login *LoginRequest) ValidationFields() apigo.Response {
 
 	if login.Credentials.User == "" {
-		return apigolang.Error{
+		return apigo.Error{
 			Title:   "Campo usuario vacío",
 			Message: "Debes ingresar tu usuario",
 		}
 	}
 
 	if login.Credentials.Password == "" {
-		return apigolang.Error{
+		return apigo.Error{
 			Title:   "Campo password vacío",
 			Message: "Debes ingresar una contraseña",
 		}
 	}
 
 	if !validateEmail(login.Credentials.User) {
-		return apigolang.Error{
+		return apigo.Error{
 			Title:   "Formato de usuario inválido",
 			Message: "Ingresa un correo electrónico valido",
 		}

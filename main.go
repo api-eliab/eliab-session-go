@@ -1,23 +1,33 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
+	"github.com/josuegiron/log"
+
 	"github.com/gorilla/mux"
-	apigolang "github.com/josuegiron/api-golang"
+	apigo "github.com/josuegiron/api-golang"
 )
 
 func main() {
-	LoadConfiguration()
+	loadConfiguration()
 	router := mux.NewRouter()
+	log.ChangeCallerSkip(-2)
 
-	middlewares := apigolang.MiddlewaresChain(apigolang.BasicAuth, apigolang.RequestHeaderJson, apigolang.GetRequestBodyMiddleware)
+	if !dbConnect() {
+		log.Panic("Error al conectar a la base de datos!")
+	}
+
+	middlewares := apigo.MiddlewaresChain(apigo.BasicAuth, apigo.RequestHeaderJson, apigo.GetRequestBodyMiddleware)
 
 	router.HandleFunc("/v1.0/session", middlewares(login)).Methods("POST")
-
+	//
 	log.Println("Starting server on port ", config.General.ServerAddress)
 	if startServerError := http.ListenAndServe(config.General.ServerAddress, router); startServerError != nil {
-		panic(startServerError)
+		log.Panic(startServerError)
 	}
+}
+
+func init() {
+
 }

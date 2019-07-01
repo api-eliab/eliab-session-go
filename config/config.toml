@@ -1,0 +1,11 @@
+mode = "dev"
+
+[general]
+serveraddress = ":8080"
+
+[database]
+database = "db_colegio"
+user = "root"
+password = "anshigua"
+server = "174.138.66.144"
+port = 3306
