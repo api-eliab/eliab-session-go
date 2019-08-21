@@ -1,7 +1,7 @@
 mode = "dev"
 
 [general]
-serveraddress = ":8080"
+serveraddress = ":9091"
 
 [database]
 database = "db_colegio"
