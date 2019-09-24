@@ -87,7 +87,7 @@ func getUserInfo(email string) (user User, err error) {
 
 func getUserSons(userID int64) (sons []Son, err error) {
 	var query2 string
-	query := fmt.Sprintf("SELECT O.classmate, P.first_name, P.first_last_name, P.second_last_name, P.avatar FROM owner_classmate AS O INNER JOIN mas_person AS P ON O.classmate = P.id WHERE O.owner = @userID")
+	query := fmt.Sprintf("SELECT O.classmate, P.first_name, P.first_last_name, P.second_last_name, P.avatar FROM owner_classmate AS O INNER JOIN mas_person AS P ON O.classmate = P.id WHERE O.owner = @userID AND O.deleted_at IS NULL")
 	query2, err = getQueryString(
 		query,
 		sql.Named("userID", userID),
