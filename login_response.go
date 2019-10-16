@@ -1,6 +1,6 @@
 package main
 
-// LoginResponse ...
+// ResponseLogin ...
 type ResponseLogin struct {
 	User ResponseUser `json:"user"`
 }
