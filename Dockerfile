@@ -11,7 +11,7 @@ FROM alpine:latest
 
 RUN mkdir -p /app && adduser -S -D -H -h /app appuser && chown -R appuser /app
 RUN mkdir /app/config
-COPY --from=builder /build/config/config.toml /app/config/
+COPY --from=builder /build/config.toml /app/
 COPY --from=builder /build/main /app/
 
 USER appuser
