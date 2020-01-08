@@ -15,7 +15,25 @@ func login(w http.ResponseWriter, r *http.Request) {
 		JSONStruct: &loginRequest,
 	}
 
-	response := request.UnmarshalBody()
+	firstLogin, response := request.GetQueryParamInt64("firstLogin")
+	if response != nil {
+		apigo.SendResponse(response, w)
+		return
+	}
+
+	if firstLogin == 1 {
+
+		uuid := request.HTTPReq.Header.Get("UUID")
+
+		response = registerDeviceToPushNotification(uuid, request.UserID)
+		if response != nil {
+			apigo.SendResponse(response, w)
+			return
+		}
+
+	}
+
+	response = request.UnmarshalBody()
 	if response != nil {
 		apigo.SendResponse(response, w)
 		return

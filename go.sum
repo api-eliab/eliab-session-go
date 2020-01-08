@@ -5,6 +5,10 @@ github.com/api-eliab/eliab-config-go v0.0.0-20191016083554-3d8d10974183 h1:sF9h2
 github.com/api-eliab/eliab-config-go v0.0.0-20191016083554-3d8d10974183/go.mod h1:4ya+jasbX7Ljmz2UeBoAZbi4WLSGBWPYxDhXuOx2LBw=
 github.com/api-eliab/eliab-config-go v0.0.0-20200108025101-b8b0599bf5fe h1:2SNlLS8FO9GXHL16NVvG4ciEoFyZykKyMBPxFR45dH8=
 github.com/api-eliab/eliab-config-go v0.0.0-20200108025101-b8b0599bf5fe/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200108043315-8db65f4dc279 h1:JKO5S/re+3ui0xB5CcKEvxF/v6cYRfv9fPIt29ZDtpc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200108043315-8db65f4dc279/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200108063530-9f0e88db9be2 h1:7Awyltqz48qsOwAPP5yWYbfzu1QAbhFe2Epo6uHkGOI=
+github.com/api-eliab/eliab-config-go v0.0.0-20200108063530-9f0e88db9be2/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
 github.com/creack/pty v1.1.7/go.mod h1:lj5s0c3V2DBrqTV7llrYr5NG6My20zk30Fl46Y7DoTY=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -27,6 +31,8 @@ github.com/josuegiron/api-golang v0.0.0-20190625091209-ea288b4a768e h1:jYJhUvnSi
 github.com/josuegiron/api-golang v0.0.0-20190625091209-ea288b4a768e/go.mod h1:bNvpBT4w+WCDMeC4A7sSLs45yIEeCmZQe6HG10QwUPw=
 github.com/josuegiron/jonesignal v0.0.0-20191230203501-68ee71396fec h1:X8zYKA2PQhooxv/kts7BizJXHpUWSyh2VDwlMnhElcs=
 github.com/josuegiron/jonesignal v0.0.0-20191230203501-68ee71396fec/go.mod h1:EpWHh3MX9dgGgWhuVzkkZVwVelf4FkCHj+t/JYpmCis=
+github.com/josuegiron/jonesignal v0.0.0-20200108064739-664f11fef5c7 h1:n45wQN+KklwLP9RnXyqcn4SNm6sbgBemjxcQZMqFXJE=
+github.com/josuegiron/jonesignal v0.0.0-20200108064739-664f11fef5c7/go.mod h1:KXl6jHKeiH87CmDXR94uqfY0yYrfB6c7r9XToA1MGZg=
 github.com/josuegiron/log v0.0.0-20190622094108-e55738b3cc8e/go.mod h1:/jadTAWxs0Xl+VuNN/GiVoBPbxVpo9B+lDqwdcDWc5U=
 github.com/josuegiron/log v0.0.0-20190926074403-577d41c76f99 h1:JO+PVP9h0bi4JMIVvGEkf2CqbvIlS+EYhGoFs5BYyiU=
 github.com/josuegiron/log v0.0.0-20190926074403-577d41c76f99/go.mod h1:fhIFriSs1u/Yf/eHEax5tC0GFAu6DFzqBLScWg/QKEs=
