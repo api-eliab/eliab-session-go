@@ -2,8 +2,10 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	apigo "github.com/josuegiron/api-golang"
+	"github.com/josuegiron/log"
 )
 
 func login(w http.ResponseWriter, r *http.Request) {
@@ -15,25 +17,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		JSONStruct: &loginRequest,
 	}
 
-	firstLogin, response := request.GetQueryParamInt64("firstLogin")
-	if response != nil {
-		apigo.SendResponse(response, w)
-		return
-	}
-
-	if firstLogin == 1 {
-
-		uuid := request.HTTPReq.Header.Get("UUID")
-
-		response = registerDeviceToPushNotification(uuid, request.UserID)
-		if response != nil {
-			apigo.SendResponse(response, w)
-			return
-		}
-
-	}
-
-	response = request.UnmarshalBody()
+	response := request.UnmarshalBody()
 	if response != nil {
 		apigo.SendResponse(response, w)
 		return
@@ -43,6 +27,31 @@ func login(w http.ResponseWriter, r *http.Request) {
 	if response != nil {
 		apigo.SendResponse(response, w)
 		return
+	}
+
+	firstLogin, response := request.GetQueryParamInt64("firstLogin")
+
+	if firstLogin == 1 {
+
+		uuid := request.HTTPReq.Header.Get("DeviceUUID")
+		appVersion := request.HTTPReq.Header.Get("AppVersion")
+		osVersion := request.HTTPReq.Header.Get("OsVersion")
+		os := request.HTTPReq.Header.Get("OS")
+		deviceModel := request.HTTPReq.Header.Get("DeviceModel")
+		timezoneStr := request.HTTPReq.Header.Get("Timezone")
+		languaje := request.HTTPReq.Header.Get("Languaje")
+
+		timezone, err := strconv.Atoi(timezoneStr)
+		if err != nil {
+			log.Error(err)
+		}
+
+		response = registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, languaje, timezone, loginRequest.Credentials.User)
+		if response != nil {
+			apigo.SendResponse(response, w)
+			return
+		}
+
 	}
 
 	response = validateCredentials(loginRequest.Credentials.User, loginRequest.Credentials.Password)

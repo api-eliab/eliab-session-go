@@ -9,6 +9,12 @@ RUN env GOOS=linux GOARCH=386 go build -o main .
 
 FROM alpine:latest
 
+RUN apk update \
+        && apk upgrade \
+        && apk add --no-cache \
+        ca-certificates \
+        && update-ca-certificates 2>/dev/null || true
+
 RUN mkdir -p /app && adduser -S -D -H -h /app appuser && chown -R appuser /app
 RUN mkdir /app/config
 COPY --from=builder /build/config.toml /app/

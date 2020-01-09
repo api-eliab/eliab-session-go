@@ -106,7 +106,6 @@ func getUserSons(userID int64) (sons []Son, err error) {
 	}
 
 	for rows.Next() {
-		log.Println("corre")
 		var son Son
 		err = rows.Scan(
 			&son.ID,

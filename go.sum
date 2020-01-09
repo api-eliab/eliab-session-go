@@ -1,4 +1,3 @@
-bitbucket.org/bakingthecookie/bi-bel3-config-go v1.1.1/go.mod h1:NSmOuW3YflTD+6vs2yhNBJpRpIQFuX/DbNxP0sQCwBo=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/api-eliab/eliab-config-go v0.0.0-20191016083554-3d8d10974183 h1:sF9h2ZuyQD/r9WveAzX0yo0yjPYt4HGc0tLBXsSUiFs=
@@ -9,6 +8,10 @@ github.com/api-eliab/eliab-config-go v0.0.0-20200108043315-8db65f4dc279 h1:JKO5S
 github.com/api-eliab/eliab-config-go v0.0.0-20200108043315-8db65f4dc279/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
 github.com/api-eliab/eliab-config-go v0.0.0-20200108063530-9f0e88db9be2 h1:7Awyltqz48qsOwAPP5yWYbfzu1QAbhFe2Epo6uHkGOI=
 github.com/api-eliab/eliab-config-go v0.0.0-20200108063530-9f0e88db9be2/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200109082432-68910659a635 h1:3wLZ4aD+V0lcRvpMdFKFlGgkNd4tYd4a3W9mp0CjiLc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200109082432-68910659a635/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
+github.com/api-eliab/eliab-config-go v0.0.0-20200109101223-87c167a755e6 h1:FUkiTY2DY+YbJ1hgiH6V8HARl2jGdv3hQMswhLumvWA=
+github.com/api-eliab/eliab-config-go v0.0.0-20200109101223-87c167a755e6/go.mod h1:kAxZfKPqr3hoIzEdkrj+4kIdSK7DP5lZBBvOqPlgrzc=
 github.com/creack/pty v1.1.7/go.mod h1:lj5s0c3V2DBrqTV7llrYr5NG6My20zk30Fl46Y7DoTY=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -27,12 +30,24 @@ github.com/jgolang/log v0.0.0-20191016075252-b9fdd9bc0a7e h1:gHwaLCOMfB29Z8dM5KZ
 github.com/jgolang/log v0.0.0-20191016075252-b9fdd9bc0a7e/go.mod h1:Pos1sztYh8gkYEbW2t6Lv8JjnWcxjAN5VT35wu2w/uI=
 github.com/jgolang/mysqltools v0.0.0-20191016080713-8e97fe224560 h1:M5pJ0CM5xUOuN3yoaQPxv2mK+wC6tTUoA9zMCuwXk10=
 github.com/jgolang/mysqltools v0.0.0-20191016080713-8e97fe224560/go.mod h1:yDHqhzpgWa87GzDQ5cbBVRrjAEUFSCrRvxh1sydqsxs=
+github.com/jgolang/mysqltools v0.0.0-20200109060751-8c2be5d113a5 h1:Ui0eeSrTw8cWbLamwBqU5zQ0thUcu4hbJhjSeRHC81o=
+github.com/jgolang/mysqltools v0.0.0-20200109060751-8c2be5d113a5/go.mod h1:yDHqhzpgWa87GzDQ5cbBVRrjAEUFSCrRvxh1sydqsxs=
 github.com/josuegiron/api-golang v0.0.0-20190625091209-ea288b4a768e h1:jYJhUvnSicyzgBJQ+gUy06TfR+20U8SS5sQnGPuaUBo=
 github.com/josuegiron/api-golang v0.0.0-20190625091209-ea288b4a768e/go.mod h1:bNvpBT4w+WCDMeC4A7sSLs45yIEeCmZQe6HG10QwUPw=
 github.com/josuegiron/jonesignal v0.0.0-20191230203501-68ee71396fec h1:X8zYKA2PQhooxv/kts7BizJXHpUWSyh2VDwlMnhElcs=
 github.com/josuegiron/jonesignal v0.0.0-20191230203501-68ee71396fec/go.mod h1:EpWHh3MX9dgGgWhuVzkkZVwVelf4FkCHj+t/JYpmCis=
 github.com/josuegiron/jonesignal v0.0.0-20200108064739-664f11fef5c7 h1:n45wQN+KklwLP9RnXyqcn4SNm6sbgBemjxcQZMqFXJE=
 github.com/josuegiron/jonesignal v0.0.0-20200108064739-664f11fef5c7/go.mod h1:KXl6jHKeiH87CmDXR94uqfY0yYrfB6c7r9XToA1MGZg=
+github.com/josuegiron/jonesignal v0.0.0-20200109084754-e1ef4fad29aa h1:HQ0ocfnQLuzInbvCSFqyfiKLTu0ifkI4umlsPEKa4xU=
+github.com/josuegiron/jonesignal v0.0.0-20200109084754-e1ef4fad29aa/go.mod h1:rofmtach5A8Vlu4y1+H36wU3trHh/idICqB7HBUo1CI=
+github.com/josuegiron/jonesignal v0.0.0-20200109100249-f87c25995cb8 h1:cwEvwVGxusAfpS5reSuiY+uvZG1l/NMiSrud+qXXCzw=
+github.com/josuegiron/jonesignal v0.0.0-20200109100249-f87c25995cb8/go.mod h1:rofmtach5A8Vlu4y1+H36wU3trHh/idICqB7HBUo1CI=
+github.com/josuegiron/jonesignal v0.0.0-20200109100709-6193eb6c6104 h1:CJ2z+g6lmIGRCT+WHkcObH8VvJaVenkZWeJkcODvHPc=
+github.com/josuegiron/jonesignal v0.0.0-20200109100709-6193eb6c6104/go.mod h1:rofmtach5A8Vlu4y1+H36wU3trHh/idICqB7HBUo1CI=
+github.com/josuegiron/jonesignal v0.0.0-20200109101332-71c937d90297 h1:J3QxqvS2V9hbO9uqGSrQb3i2zgcXklfVKpHF0wmGSOg=
+github.com/josuegiron/jonesignal v0.0.0-20200109101332-71c937d90297/go.mod h1:vm3XPVVo0yOv+IbtKWMDIOQpdXcvDKOsXcqqCBDP9q0=
+github.com/josuegiron/jonesignal v0.0.0-20200109101759-074ccd5e8ad3 h1:QMGy4LYcuCc5lHwD4EdOsyjStOJEnwhMWqPSxfC3+M8=
+github.com/josuegiron/jonesignal v0.0.0-20200109101759-074ccd5e8ad3/go.mod h1:GkJ09s2KIre/xykA1D/PmdeYLK4/Ot98HFDzMz2tHus=
 github.com/josuegiron/log v0.0.0-20190622094108-e55738b3cc8e/go.mod h1:/jadTAWxs0Xl+VuNN/GiVoBPbxVpo9B+lDqwdcDWc5U=
 github.com/josuegiron/log v0.0.0-20190926074403-577d41c76f99 h1:JO+PVP9h0bi4JMIVvGEkf2CqbvIlS+EYhGoFs5BYyiU=
 github.com/josuegiron/log v0.0.0-20190926074403-577d41c76f99/go.mod h1:fhIFriSs1u/Yf/eHEax5tC0GFAu6DFzqBLScWg/QKEs=
@@ -50,6 +65,8 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/objx v0.2.0/go.mod h1:qt09Ya8vawLte6SNmTgCsAVtYtaKzEcn8ATUoHMkEqE=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+go.mnc.gt/log v1.0.0/go.mod h1:58BGHNyPG1wjuMuGNlk/ppf4N9yc8jae4+EdJu/GYZg=
+go.uber.org/atomic v1.3.2/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=
 go.uber.org/atomic v1.5.0/go.mod h1:sABNBOSYdrvTF6hTgEIbc7YasKWGhgEQZyfxyTvoXHQ=
@@ -62,6 +79,7 @@ go.uber.org/multierr v1.3.0/go.mod h1:VgVr7evmIr6uPjLBxg28wmKNXyqE9akIJ5XnfpiKl+
 go.uber.org/multierr v1.4.0 h1:f3WCSC2KzAcBXGATIxAB1E2XuCpNU255wNKZ505qi3E=
 go.uber.org/multierr v1.4.0/go.mod h1:VgVr7evmIr6uPjLBxg28wmKNXyqE9akIJ5XnfpiKl+4=
 go.uber.org/tools v0.0.0-20190618225709-2cfd321de3ee/go.mod h1:vJERXedbb3MVM5f9Ejo0C68/HhF8uaILCdgjnY+goOA=
+go.uber.org/zap v1.9.1/go.mod h1:vwi/ZaCAaUcBkycHslxD9B2zi4UTXhF60s6SWpuDF0Q=
 go.uber.org/zap v1.10.0 h1:ORx85nbTijNz8ljznvCMR1ZBIPKFn3jQrag10X2AsuM=
 go.uber.org/zap v1.10.0/go.mod h1:vwi/ZaCAaUcBkycHslxD9B2zi4UTXhF60s6SWpuDF0Q=
 go.uber.org/zap v1.13.0 h1:nR6NoDBgAf67s68NhaXbsojM+2gxp3S1hWkHDl27pVU=
@@ -71,6 +89,7 @@ golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8U
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191227163750-53104e6ec876 h1:sKJQZMuxjOAR/Uo2LBfU90onWEf1dF4C+0hPJCc9Mpc=
 golang.org/x/crypto v0.0.0-20191227163750-53104e6ec876/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
+golang.org/x/crypto v0.0.0-20200108215511-5d647ca15757/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/lint v0.0.0-20190930215403-16217165b5de/go.mod h1:6SW0HCj/g11FgYtHlgUYUwCkIfeOF89ocIRzGO/8vkc=
 golang.org/x/lint v0.0.0-20191125180803-fdd1cda4f05f/go.mod h1:5qLYkcX4OjUUV8bRuDixDT3tpyyb+LUpUlRWLxfhWrs=
 golang.org/x/mod v0.0.0-20190513183733-4bf6d317e70e/go.mod h1:mXi4GBBbnImb6dmsKGUJ2LatrhH/nqhxcFungHvyanc=
@@ -94,6 +113,7 @@ golang.org/x/tools v0.0.0-20191029041327-9cc4af7d6b2c/go.mod h1:b+2E5dAYhXwXZwtn
 golang.org/x/tools v0.0.0-20191029190741-b9c20aec41a5/go.mod h1:b+2E5dAYhXwXZwtnZ6UAqBI28+e2cm9otk0dWdXHAEo=
 golang.org/x/tools v0.0.0-20191125144606-a911d9008d1f/go.mod h1:b+2E5dAYhXwXZwtnZ6UAqBI28+e2cm9otk0dWdXHAEo=
 golang.org/x/tools v0.0.0-20200107184032-11e9d9cc0042/go.mod h1:TB2adYChydJhpapKDTa4BR/hXlZSLoq2Wpct/0txZ28=
+golang.org/x/tools v0.0.0-20200108203644-89082a384178/go.mod h1:TB2adYChydJhpapKDTa4BR/hXlZSLoq2Wpct/0txZ28=
 golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
