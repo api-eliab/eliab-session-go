@@ -7,35 +7,35 @@ import (
 	"github.com/josuegiron/log"
 )
 
-func registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, language string, timezone int, userID string) apigo.Response {
+func registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, language string, timezone int, userID, playerID string) apigo.Response {
 
-	deviceReq := jonesignal.OSAddDeviceReq{
-		AppID:       config.Get.OneSignal.AppID,
-		Identifier:  uuid,
-		DeviceModel: deviceModel,
-		DeviceOs:    osVersion,
-		Timezone:    timezone,
-		Language:    language,
-		GameVersion: appVersion,
-		DeviceType:  1, // Android
-	}
+	// deviceReq := jonesignal.OSAddDeviceReq{
+	// 	AppID:       config.Get.OneSignal.AppID,
+	// 	Identifier:  uuid,
+	// 	DeviceModel: deviceModel,
+	// 	DeviceOs:    osVersion,
+	// 	Timezone:    timezone,
+	// 	Language:    language,
+	// 	GameVersion: appVersion,
+	// 	DeviceType:  1, // Android
+	// }
 
-	onesignalID, err := jonesignal.AddDevice(deviceReq)
+	// onesignalID, err := jonesignal.AddDevice(deviceReq)
+	// if err != nil {
+	// 	log.Error(err)
+	// 	return apigo.Error{
+	// 		Title:   "No se pudo agregar el dispositivo al proveedor!",
+	// 		Message: "No se pudo agregar al dispositivo al proveedor!",
+	// 	}
+	// }
+
+	err := saveUserDeviceInDB(uuid, appVersion, osVersion, os, deviceModel, language, timezone, userID, playerID)
 	if err != nil {
 		log.Error(err)
 		return apigo.Error{
-			Title:   "No se pudo agregar el dispositivo al proveedor!",
-			Message: "No se pudo agregar al dispositivo al proveedor!",
+			Title:   "No se pudo asociar el dispositivo!",
+			Message: "No se pudo asocial el dispositivo!",
 		}
-	}
-
-	err = saveUserDeviceInDB(uuid, appVersion, osVersion, os, deviceModel, language, timezone, userID, onesignalID)
-	if err != nil {
-		log.Error(err)
-		// return apigo.Error{
-		// 	Title:   "No se pudo asociar el dispositivo!",
-		// 	Message: "No se pudo asocial el dispositivo!",
-		// }
 	}
 
 	return nil
@@ -72,10 +72,11 @@ func sendMessageToUsersDevice(users []int64, title, message, iconURL string) api
 
 	}
 
-	log.Info(notification)
+	log.Info(notification.IncludePlayerIds)
 
 	id, err := jonesignal.SendNotification(notification)
 	if err != nil {
+		log.Error(err)
 		return apigo.Error{
 			Title:   "No fue posible enviar el mensaje!",
 			Message: "No fue posible enviar el mensaje!",

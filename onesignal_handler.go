@@ -3,10 +3,14 @@ package main
 import (
 	"net/http"
 
+	config "github.com/api-eliab/eliab-config-go"
 	apigo "github.com/josuegiron/api-golang"
+	"github.com/josuegiron/log"
 )
 
 func sendBroadcastMessageHandler(w http.ResponseWriter, r *http.Request) {
+
+	log.Info(config.Get.OneSignal.Key)
 
 	messageRequest := MessageRequest{}
 

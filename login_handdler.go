@@ -40,17 +40,14 @@ func login(w http.ResponseWriter, r *http.Request) {
 		deviceModel := request.HTTPReq.Header.Get("DeviceModel")
 		timezoneStr := request.HTTPReq.Header.Get("Timezone")
 		languaje := request.HTTPReq.Header.Get("Languaje")
+		playerID := request.HTTPReq.Header.Get("PlayerID")
 
 		timezone, err := strconv.Atoi(timezoneStr)
 		if err != nil {
 			log.Error(err)
 		}
 
-		response = registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, languaje, timezone, loginRequest.Credentials.User)
-		if response != nil {
-			apigo.SendResponse(response, w)
-			return
-		}
+		registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, languaje, timezone, loginRequest.Credentials.User, playerID)
 
 	}
 

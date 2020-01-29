@@ -9,7 +9,7 @@ import (
 	"github.com/jgolang/mysqltools"
 )
 
-func saveUserDeviceInDB(uuid, appVersion, osVersion, os, deviceModel, language string, timezone int, userID string, onesignalID string) error {
+func saveUserDeviceInDB(uuid, appVersion, osVersion, os, deviceModel, language string, timezone int, userID string, playerID string) error {
 
 	query := fmt.Sprintf("INSERT INTO user_device (uuid, appVersion, osVersion, os, deviceModel, timezoneStr, languaje, timezone, onesignal_id, status, user_id, created_at, updated_at) VALUES ( @uuid, @appVersion, @osVersion, @os, @deviceModel, @timezone, @languaje, @timezone, @onesignalID, @status, (select id from mas_person where email = @userID), NOW(), NOW())")
 	query2, err := mysqltools.GetQueryString(
@@ -21,7 +21,7 @@ func saveUserDeviceInDB(uuid, appVersion, osVersion, os, deviceModel, language s
 		sql.Named("deviceModel", deviceModel),
 		sql.Named("timezone", timezone),
 		sql.Named("languaje", language),
-		sql.Named("onesignalID", onesignalID),
+		sql.Named("onesignalID", playerID),
 		sql.Named("status", "active"),
 		sql.Named("userID", userID),
 	)
