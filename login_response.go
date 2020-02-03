@@ -22,4 +22,6 @@ type ResponseSon struct {
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
 	Avatar    int64  `json:"avatar"`
+	Section   string `json:"section"`
+	Grade     string `json:"grade"`
 }

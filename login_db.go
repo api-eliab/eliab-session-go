@@ -28,6 +28,8 @@ type Son struct {
 	FirstLastName  string
 	SecondLastName string
 	Avatar         int64
+	Section        string
+	Grade          string
 }
 
 func validateUser(email string) error {
@@ -89,7 +91,67 @@ func getUserInfo(email string) (user User, err error) {
 
 func getUserSons(userID int64) (sons []Son, err error) {
 	var query2 string
-	query := fmt.Sprintf("SELECT O.classmate, P.first_name, P.first_last_name, P.second_last_name, P.avatar FROM owner_classmate AS O INNER JOIN mas_person AS P ON O.classmate = P.id WHERE O.owner = @userID AND O.deleted_at IS NULL")
+	query := `
+		SELECT 
+			O.classmate, 
+			P.first_name, 
+			P.first_last_name, 
+			P.second_last_name, 
+			P.avatar,
+			(
+				SELECT  
+					ms.name
+				FROM 
+					assignation a
+				JOIN 
+					mas_period mp 
+						ON a.period_id = mp.id 
+						AND mp.current = 1 
+						AND mp.deleted_at IS NULL
+				JOIN 
+					section s 
+						ON s.id = a.section_id 
+						AND s.deleted_at IS NULL
+				JOIN 
+					mas_section ms 
+						ON ms.id = s.mas_section_id 
+						AND ms.deleted_at IS NULL
+				WHERE 
+					a.person_id = P.id  
+			) AS section, 
+			(
+				SELECT  
+					mg.description
+				FROM 
+					assignation a
+				JOIN 
+					mas_period mp 
+						ON a.period_id = mp.id 
+						AND mp.current = 1 
+						AND mp.deleted_at IS NULL
+				JOIN 
+					section s 
+						ON s.id = a.section_id 
+						AND s.deleted_at IS NULL
+				JOIN 
+					mas_section ms 
+						ON ms.id = s.mas_section_id 
+						AND ms.deleted_at IS NULL
+				JOIN 
+					mas_grade mg 
+						ON mg.id = ms.grade_id
+				WHERE 
+					a.person_id = P.id  
+			) AS grade
+		FROM 
+			owner_classmate AS O 
+		INNER JOIN 
+			mas_person AS P 
+				ON O.classmate = P.id 
+		WHERE 
+			O.owner = @userID 
+			AND O.deleted_at IS NULL
+	`
 	query2, err = mysqltools.GetQueryString(
 		query,
 		sql.Named("userID", userID),
@@ -113,6 +175,8 @@ func getUserSons(userID int64) (sons []Son, err error) {
 			&son.FirstLastName,
 			&son.SecondLastName,
 			&son.Avatar,
+			&son.Section,
+			&son.Grade,
 		)
 		if err != nil {
 			return

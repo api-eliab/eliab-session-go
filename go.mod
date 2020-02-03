@@ -13,7 +13,6 @@ require (
 	github.com/josuegiron/api-golang v0.0.0-20190625091209-ea288b4a768e
 	github.com/josuegiron/jonesignal v0.0.0-20200109101759-074ccd5e8ad3
 	github.com/josuegiron/log v0.0.0-20190926074403-577d41c76f99
-	go.mnc.gt/log v1.0.0
 	go.uber.org/zap v1.13.0
 	golang.org/x/crypto v0.0.0-20200109152110-61a87790db17 // indirect
 	golang.org/x/tools v0.0.0-20200110004031-563860d11da6 // indirect

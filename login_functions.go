@@ -72,6 +72,8 @@ func validateCredentials(email, password string) apigo.Response {
 		newSon.FirstName = son.FirstName
 		newSon.LastName = fmt.Sprintf("%v %v", son.FirstLastName, son.SecondLastName)
 		newSon.Avatar = son.Avatar
+		newSon.Section = son.Section
+		newSon.Grade = son.Grade
 		respData.User.Sons = append(respData.User.Sons, newSon)
 	}
 
