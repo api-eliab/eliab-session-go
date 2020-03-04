@@ -1,42 +1,49 @@
 #! /bin/bash
 
-echo "###### DEPLOY MODULE ######"
-currentDate=`date +"%b-%d.%H.%M"`
-echo "Build colegios-session docker image" $currentDate
+# Run: ./docker_build_image.sh 0.1.1
 
-version="0.1.0"
-imagename="colegios-session"
+version="$1"
+imagename=$(basename "$PWD")
+localPath="../eliab-docker-img"
+server="root@159.203.93.24"
+remotePath="/root/docker-images"
+appRemotePath="/root/api-eliab-dev"
+
+echo -e "\n###### DEPLOY MODULE ######\n"
+
+currentDate=`date +"%b-%d.%H.%M"`
+
+echo "Build docker image in" $currentDate
+
 filename=$imagename-v$version-$currentDate".tar"
 echo "File name: "$filename
-
 
 echo "Generate local docker image:"
 docker build -t $imagename:$version . -f ./Dockerfile --rm=true || exit 1
 
-docker rmi $(docker images -f dangling=true -q)
-
-cd ..
+docker rmi -f $(docker images -f dangling=true -q)
 
 echo "Save docker image in file *.tar:"
-docker save "$imagename":"$version" > eliab-docker-img/v$version/$filename || exit 1
+docker save "$imagename":"$version" > $localPath/$filename || exit 1
 echo $filename
 
 echo "Upload docker image to server:"
-scp eliab-docker-img/v$version/$filename root@159.203.93.24:/root/api-eliab/devops/images || exit 1
+rsync -rPavzh $localPath/$filename $server:$remotePath/$filename || exit 1
 echo "###### SUCCESS LOAD ######"
 
-loadImage="docker load < api-eliab/devops/images/"$filename
+loadImage="docker load < "$remotePath"/"$filename
 
 echo "Enter server: "
-ssh root@159.203.93.24<< EOF
+ssh $server<< EOF
     $loadImage
-    cd api-eliab/devops
+    cd $appRemotePath
     docker-compose down
-    docker-compose up 
+    docker-compose up &> eliabc.log&
+    docker image prune -f
 EOF
-echo "###### SUCCESS DEPLOY MODULE ######"
+echo "\n###### SUCCESS DEPLOY MODULE ######\n"
 
-cd colegios-session
+git status
 
 echo "Want you commit changes? [y/n]"
 read commit
@@ -45,10 +52,11 @@ if [ $commit == 'y' ]
 then 
     echo "Commit message: "
     read message
-    git commit -am "$message"
+    git add .
+    git commit -m "$message"
     git push
-    echo "###### SUCCESS SCRIPT ######"
+    echo "\n###### SUCCESS SCRIPT ######\n"
 else 
-    echo "###### SUCCESS SCRIPT[NOT COMMIT] ######"
+    echo "\n###### SUCCESS SCRIPT[NOT COMMIT] ######\n"
     exit 1
 fi

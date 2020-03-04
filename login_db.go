@@ -90,41 +90,44 @@ func getUserInfo(email string) (user User, err error) {
 }
 
 func getUserSons(userID int64) (sons []Son, err error) {
+
 	var query2 string
+
 	query := `
-	SELECT
-		O.classmate,
-		P.first_name,
-		P.first_last_name,
-		P.second_last_name,
-		P.avatar,
-		ms.name AS section_name,
-		mg.name AS grade_name
-	FROM
-		owner_classmate AS O
-	INNER JOIN
-		mas_person AS P
-		ON O.classmate = P.id
-	JOIN 
-		assignation a 
-			ON a.person_id  = O.classmate 
-			AND a.deleted_at IS NULL
-	JOIN 
-		mas_period mp 
-			ON mp.id = a.period_id 
-			AND mp.current = 1
-	JOIN 
-		section s ON s.id = a.section_id
-	JOIN 
-		mas_section ms 
-			ON ms.id = s.mas_section_id
-	JOIN 
-		mas_grade mg 
-			ON mg.id = ms.grade_id
-	WHERE
-		O.owner = @userID 
-		AND O.deleted_at IS NULL
+		SELECT
+			O.classmate,
+			P.first_name,
+			P.first_last_name,
+			P.second_last_name,
+			P.avatar,
+			ms.name AS section_name,
+			mg.name AS grade_name
+		FROM
+			owner_classmate AS O
+		INNER JOIN
+			mas_person AS P
+			ON O.classmate = P.id
+		JOIN 
+			assignation a 
+				ON a.person_id  = O.classmate 
+				AND a.deleted_at IS NULL
+		JOIN 
+			mas_period mp 
+				ON mp.id = a.period_id 
+				AND mp.current = 1
+		JOIN 
+			section s ON s.id = a.section_id
+		JOIN 
+			mas_section ms 
+				ON ms.id = s.mas_section_id
+		JOIN 
+			mas_grade mg 
+				ON mg.id = ms.grade_id
+		WHERE
+			O.owner = @userID 
+			AND O.deleted_at IS NULL
 	`
+
 	query2, err = mysqltools.GetQueryString(
 		query,
 		sql.Named("userID", userID),
