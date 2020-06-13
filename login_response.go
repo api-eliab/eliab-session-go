@@ -24,4 +24,5 @@ type ResponseSon struct {
 	Avatar    int64  `json:"avatar"`
 	Section   string `json:"section"`
 	Grade     string `json:"grade"`
+	School    string `json:"school"`
 }
