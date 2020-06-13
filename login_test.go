@@ -12,8 +12,16 @@ func TestValidateCredentials(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	if !validatePassword("xxxxxxxxxx") {
+
+	validate, err := validatePassword("email@email.com", "xxxxxxxxxx")
+	if err != nil {
+		t.Error(err)
+		return
+	}
+
+	if !validate {
 		t.Error("No se pudo validar!")
+		return
 	}
 
 	t.Log("Te has logeado!")

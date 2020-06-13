@@ -35,7 +35,7 @@ func main() {
 	router.HandleFunc("/v1.0/session", middlewares(login)).Methods("POST")
 	router.HandleFunc("/v1.0/messages/users", middlewares(sendBroadcastMessageHandler)).Methods("POST")
 	router.HandleFunc("/v1.0/messages/users/{userID}", middlewares(sendOneMessageHandler)).Methods("POST")
-	//
+
 	log.Println("Starting server on port ", port)
 	if startServerError := http.ListenAndServe(port, router); startServerError != nil {
 		log.Panic(startServerError)
