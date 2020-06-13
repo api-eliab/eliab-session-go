@@ -11,7 +11,7 @@ import (
 	"github.com/jgolang/apirest"
 )
 
-var appVersion string
+var latestSupportedVersion string
 
 var db *sql.DB
 
@@ -22,7 +22,11 @@ func init() {
 func main() {
 
 	port := config.Get.General["SESSIONS"].PortServer
-	appVersion = config.Get.AppVersion
+
+	err := convertLatestSupportedAppVersionThreePart()
+	if err != nil {
+		log.Panic(err)
+	}
 
 	router := mux.NewRouter()
 

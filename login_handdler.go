@@ -29,24 +29,15 @@ func login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	firstLogin, response := request.GetQueryParamInt64("firstLogin")
-	appVersionHeader := request.HTTPReq.Header.Get("AppVersion")
+	inAppVersionStr := request.HTTPReq.Header.Get("AppVersion")
 
-	if appVersionHeader != appVersion {
-
-		log.Debug(appVersion)
-
-		response := apigo.Error{
-			Title:   "¡Nueva actualización! Ingresa al Playstore y actualiza para ingresar",
-			Message: "Debes actualizar tu aplicación para poder continuar",
-			Action:  "https://play.google.com/store/apps/details?id=school.palacios.gt.com.schoolapp&hl=en",
-		}
-
+	response = validateAppVersion(inAppVersionStr)
+	if response != nil {
 		apigo.SendResponse(response, w)
-
 		return
-
 	}
+
+	firstLogin, response := request.GetQueryParamInt64("firstLogin")
 
 	if firstLogin == 1 {
 
@@ -63,7 +54,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 			log.Error(err)
 		}
 
-		registerDeviceToPushNotification(uuid, appVersion, osVersion, os, deviceModel, languaje, timezone, loginRequest.Credentials.User, playerID)
+		registerDeviceToPushNotification(uuid, inAppVersionStr, osVersion, os, deviceModel, languaje, timezone, loginRequest.Credentials.User, playerID)
 
 	}
 
