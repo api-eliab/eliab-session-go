@@ -75,6 +75,7 @@ func validateCredentials(email, password string) apigo.Response {
 		newSon.Avatar = son.Avatar
 		newSon.Section = son.Section
 		newSon.Grade = son.Grade
+		newSon.SchoolID = 1 // *test_value
 		respData.User.Sons = append(respData.User.Sons, newSon)
 	}
 
